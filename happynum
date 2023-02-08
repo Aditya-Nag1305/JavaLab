@@ -2,56 +2,47 @@ package nag;
 
 import java.util.Scanner;
 
-interface A
-{
-	interface B
-	{
-		public int callMe(int sum);
+interface A {
+	interface B{
+			public void hprint(int num);
 	}
 }
 
-
-public class happynum implements A
-{
-	int sum=0;
+public class happynum implements A{
+	public void hprint(int num) {
+		System.out.println("Checking if number is happy");
+	}
 	
-	public static void main(String[] args)
-	{
-		Scanner in=new Scanner(System.in);
-		System.out.print("Enter the number to be tested as happy or unhappy : ");
-		
-		int num=(int)Math.pow(in.nextInt(), 2);
-		
-		System.out.println(num);
-		
-		happynum p=new happynum();
-		
-		while(num>9)
+	public static int ishappy(int num) {
+		int sum=0;
+		int temp;
+		while(num>0)
 		{
-			System.out.println(p.callMe(num));
-			num=p.callMe(num);
+			temp= num%10;
+			sum= sum +(temp*temp);
+			num=num/10;
 		}
+		return sum;
+	}
+	public static void main(String[]args) 
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter number");
+		int num=sc.nextInt();
+		
+		happynum p= new happynum();
+		p.hprint(num);
+		while(num>1)
+			num=ishappy(num);
 		
 		if(num==1)
-			System.out.println("Its a happy number : )");
+		{
+			System.out.println("Happy");
+		}
 		else
-			System.out.println("Its unhappy :(");		
+		{
+			System.out.println("Unhappy");
+		}
 	}
-	
-	public int callMe(int sum) 
-	{
-	    int fin = 0;
-	   
-	    while (sum > 0) 
-	    {
-	        int digit = sum % 10;
-	        int square = digit * digit;
-	        fin += square;
-	        
-	        System.out.println("Square of " + digit + ": " + square + ", Sum of squares: " + fin);
-	        sum /= 10;
-	    }
-	    return fin;
-	}
-
 }
+

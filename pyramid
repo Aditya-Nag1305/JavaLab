@@ -1,0 +1,32 @@
+package nag;
+import java.util.Scanner;
+
+public class pyramid {
+	public static void main(String[]args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter number of levels: ");
+		int levels=sc.nextInt();
+		int number=1;
+		for (int i=1;i<=levels;i++)
+		{
+			for(int j=1;j<=levels - i;j++)
+			{
+				System.out.print(" ");
+			}
+			for(int k=1;k<=i;k++)
+			{
+				System.out.print(number+" ");
+				number++;
+			}
+			number--;
+			for(int l=1;l<i;l++)
+			{
+				number--;
+				System.out.print(number+" ");
+			}
+			System.out.println("");
+		}
+	}
+}
+
+

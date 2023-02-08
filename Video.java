@@ -69,6 +69,6 @@ public class Video {
 	}
 	
 	public void setRating(int rating) {
-	this.rating = rating;
+	this.rating = rating; 
 	}
 }*/

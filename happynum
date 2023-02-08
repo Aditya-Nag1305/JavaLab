@@ -1,0 +1,57 @@
+package nag;
+
+import java.util.Scanner;
+
+interface A
+{
+	interface B
+	{
+		public int callMe(int sum);
+	}
+}
+
+
+public class happynum implements A
+{
+	int sum=0;
+	
+	public static void main(String[] args)
+	{
+		Scanner in=new Scanner(System.in);
+		System.out.print("Enter the number to be tested as happy or unhappy : ");
+		
+		int num=(int)Math.pow(in.nextInt(), 2);
+		
+		System.out.println(num);
+		
+		happynum p=new happynum();
+		
+		while(num>9)
+		{
+			System.out.println(p.callMe(num));
+			num=p.callMe(num);
+		}
+		
+		if(num==1)
+			System.out.println("Its a happy number : )");
+		else
+			System.out.println("Its unhappy :(");		
+	}
+	
+	public int callMe(int sum) 
+	{
+	    int fin = 0;
+	   
+	    while (sum > 0) 
+	    {
+	        int digit = sum % 10;
+	        int square = digit * digit;
+	        fin += square;
+	        
+	        System.out.println("Square of " + digit + ": " + square + ", Sum of squares: " + fin);
+	        sum /= 10;
+	    }
+	    return fin;
+	}
+
+}

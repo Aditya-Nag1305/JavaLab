@@ -1,0 +1,28 @@
+package nag;
+import java.util.Scanner;
+
+public class digitSum {
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter two digit number: ");
+		int num=sc.nextInt();
+		
+		int sum=0;
+		while(num>0)
+		{
+			int temp=num%10;
+			sum= sum+temp;
+			num=num/10;
+			if(sum>10)
+			{
+				System.out.println("Sum is "+ sum);
+				num=sum;
+				sum=0;
+			}
+		}
+		
+		System.out.println("Sum is: "+ sum);
+	}
+
+}

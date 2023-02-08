@@ -62,12 +62,14 @@ public class gui {
 						try
 						{
 							FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);//The getAbsoluteFile() method is called on the File object, file
-																						                              //to get the absolute path of the file, and 
-																						                              //the true argument passed to the FileWriter constructor 
-																						                              //means that the contents of the file will be 
-																						                              //appended rather than overwritten each time the code is executed. 
+														    //to get the absolute path of the file, and 
+														    //the true argument passed to the FileWriter constructor 
+														    //means that the contents of the file will be 
+														    //appended rather than overwritten each time the code is executed. 
 							System.out.println("\nNAME: "+t1.getText()+"\nID: "+t2.getText()+"\nDOJ: "+t3.getText()+"\nDOB: "+t4.getText()+"\n");
+							
 							fw.write("\nNAME: "+t1.getText()+"\nID: "+t2.getText()+"\nDOJ: "+t3.getText()+"\nDOB: "+t4.getText()+"\n");
+							
 							fw.close();
 						}
 						catch(IOException e1)
@@ -94,16 +96,16 @@ public class gui {
 		p2.add(l2);
 		p2.add(t2);
 		
-    p3.add(l3);
+    		p3.add(l3);
 		p3.add(t3);
 		
-    p4.add(l4);
+    		p4.add(l4);
 		p4.add(t4);
 		
-    p5.add(b1);
+    		p5.add(b1);
 		p6.add(b2);
 		
-    frame.add(p1);
+    		frame.add(p1);
 		frame.add(p2);
 		frame.add(p3);
 		frame.add(p4);

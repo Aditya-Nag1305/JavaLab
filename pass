@@ -1,0 +1,24 @@
+package nag;
+import java.util.Scanner;
+import java.util.Random;
+
+public class pass {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Random rand = new Random();
+        
+        System.out.print("Enter Room Number: ");
+        int roomNum = in.nextInt();
+        
+        System.out.print("Enter Mobile Number: ");
+        int mobileNum = in.nextInt();
+        
+        System.out.print("Enter Name: ");
+        String name = in.next();
+        
+        String password = name.substring(0, 2)+ rand.nextInt(100) + (roomNum + mobileNum) ;
+        password = password.substring(0, 6);
+        
+        System.out.println("Unique Password: " + password);
+    }
+}
